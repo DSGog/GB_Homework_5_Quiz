@@ -1,6 +1,5 @@
-package com.example.gb_homework_5_quiz;
+package com.example.MedicalQuiz;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -17,11 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
-//        MediaPlayer music = MediaPlayer.create(MainActivity.this, R.raw.air_raid);
-        MediaPlayer applause = MediaPlayer.create(MainActivity.this, R.raw.applause_y);
-//        music.start();
-        applause.start();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

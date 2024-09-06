@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">medical_quiz</string>
+    <string name="app_name">Medical Quiz</string>
+    <string name="welcome_message">Добро пожаловать в жизнь!</string>
+    <string name="start_button_text">Начать</string>
+    <string name="back_button_text">Назад</string>
+    <string name="submit_button_text">Отправить</string>
+    <string name="result_message">Ваш результат:</string>
+    <string name="restart_button_text">Начать заново</string>
+    <string name="question_text">Вопрос</string>
+    <string name="back_button">Назад</string>
+    <string name="send_button">Отправить</string>
 </resources>

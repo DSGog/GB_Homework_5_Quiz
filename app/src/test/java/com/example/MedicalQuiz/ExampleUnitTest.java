@@ -1,4 +1,4 @@
-package com.example.gb_homework_5_quiz;
+package com.example.MedicalQuiz;
 
 import org.junit.Test;
 
