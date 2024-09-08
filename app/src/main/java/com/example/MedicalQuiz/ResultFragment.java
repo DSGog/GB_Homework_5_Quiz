@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 public class ResultFragment extends Fragment {
@@ -21,14 +22,19 @@ public class ResultFragment extends Fragment {
         Button restartButton = view.findViewById(R.id.button_restart);
 
         int score = getArguments().getInt("score", 0);
-        resultText.setText("Правильных ответов: " + score);
+        resultText.setText(getString(R.string.correct_answers_count) + score);
 
         applause = MediaPlayer.create(requireContext(), R.raw.applause_y);
         applause.setVolume(0.1f, 0.1f);
         applause.start();
 
+        restartButton.setOnClickListener(v -> {
+            NavOptions navOptions = new NavOptions.Builder()
+                    .setPopUpTo(R.id.welcomeFragment, false)
+                    .build();
+            Navigation.findNavController(view).navigate(R.id.quizFragment, null, navOptions);
+        });
 
-        restartButton.setOnClickListener(v -> Navigation.findNavController(view).navigate(R.id.quizFragment));
 
         return view;
     }

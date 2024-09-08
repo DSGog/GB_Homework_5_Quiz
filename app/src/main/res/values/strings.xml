@@ -6,7 +6,11 @@
     <string name="submit_button_text">Отправить</string>
     <string name="result_message">Ваш результат:</string>
     <string name="restart_button_text">Начать заново</string>
-    <string name="question_text">Вопрос</string>
+    <string name="question_text">Medical Quiz</string>
     <string name="back_button">Назад</string>
     <string name="send_button">Отправить</string>
+    <string name="false_answer">Неправильно!</string>
+    <string name="choose_answer">Выберите ответ?</string>
+    <string name="correct_answers_count">"Правильных ответов: "</string>
+    <string name="correct_answer">Правильно!</string>
 </resources>

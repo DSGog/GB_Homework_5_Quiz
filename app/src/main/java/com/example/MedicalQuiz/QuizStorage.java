@@ -1,4 +1,5 @@
 package com.example.MedicalQuiz;
+
 public class QuizStorage {
     private static final String[] questions = {
             "Самый большой орган в организме человека?",
@@ -15,14 +16,23 @@ public class QuizStorage {
     private static final int[] correctAnswers = {2, 0, 1};
 
     public static String getQuestion(int index) {
+        if (index < 0 || index >= questions.length) {
+            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
+        }
         return questions[index];
     }
 
     public static String[] getAnswers(int index) {
+        if (index < 0 || index >= answers.length) {
+            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
+        }
         return answers[index];
     }
 
     public static int getCorrectAnswer(int index) {
+        if (index < 0 || index >= correctAnswers.length) {
+            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
+        }
         return correctAnswers[index];
     }
 

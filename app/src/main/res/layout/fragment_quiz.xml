@@ -41,9 +41,9 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/answers_group"
-            app:layout_constraintStart_toStartOf="@id/answers_group"
-            app:layout_constraintTop_toBottomOf="@id/answers_group"
+            app:layout_constraintEnd_toEndOf="@id/submit_button"
+            app:layout_constraintStart_toStartOf="@id/submit_button"
+            app:layout_constraintTop_toBottomOf="@id/submit_button"
             android:layout_margin="16dp"
             android:text="@string/back_button" />
 
@@ -51,9 +51,9 @@
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/back_button"
-            app:layout_constraintStart_toStartOf="@id/back_button"
-            app:layout_constraintTop_toBottomOf="@id/back_button"
+            app:layout_constraintEnd_toEndOf="@id/answers_group"
+            app:layout_constraintStart_toStartOf="@id/answers_group"
+            app:layout_constraintTop_toBottomOf="@id/answers_group"
             android:text="@string/send_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
