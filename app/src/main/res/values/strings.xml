@@ -10,7 +10,10 @@
     <string name="back_button">Назад</string>
     <string name="send_button">Отправить</string>
     <string name="false_answer">Неправильно!</string>
-    <string name="choose_answer">Выберите ответ?</string>
+    <string name="choose_answer">Выберите ответ</string>
     <string name="correct_answers_count">"Правильных ответов: "</string>
     <string name="correct_answer">Правильно!</string>
+    <string name="button_to_second_activity">Переход на тестовую страницу</string>
+    <string name="transition_text">Хочешь увеличить картинку? Кликни</string>
+    <string name="second_text_transition">Кликни на картинку</string>
 </resources>

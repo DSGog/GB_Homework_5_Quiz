@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ResultFragment">
 
     <LinearLayout
@@ -17,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/result_message"
+            android:layout_marginTop="100dp"
             android:textSize="24sp"
             android:textColor="#010310"
             android:theme="@style/Theme.medical_quiz" />
@@ -26,9 +28,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/restart_button_text"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:theme="@style/Theme.medical_quiz" />
-    </LinearLayout>
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cat_book_lottie"
+            android:layout_marginBottom="0dp"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/cat_book_lottie"/>
+    </LinearLayout>
 
 </FrameLayout>

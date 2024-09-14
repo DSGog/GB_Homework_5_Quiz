@@ -1,5 +1,9 @@
 package com.example.MedicalQuiz;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +14,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
+
 
 public class ResultFragment extends Fragment {
 
@@ -24,6 +29,14 @@ public class ResultFragment extends Fragment {
         int score = getArguments().getInt("score", 0);
         resultText.setText(getString(R.string.correct_answers_count) + score);
 
+        AnimatorSet animatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(requireContext(), R.animator.fade_move);
+        animatorSet.setTarget(resultText);
+        animatorSet.start();
+
+        AnimatorSet buttonAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(requireContext(), R.animator.fade_move);
+        buttonAnimatorSet.setTarget(restartButton);
+        buttonAnimatorSet.start();
+
         applause = MediaPlayer.create(requireContext(), R.raw.applause_y);
         applause.setVolume(0.1f, 0.1f);
         applause.start();
@@ -31,11 +44,13 @@ public class ResultFragment extends Fragment {
         restartButton.setOnClickListener(v -> {
             NavOptions navOptions = new NavOptions.Builder()
                     .setPopUpTo(R.id.welcomeFragment, false)
+                    .setEnterAnim(R.anim.fade_in)
+                    .setExitAnim(R.anim.fade_out)
+                    .setPopEnterAnim(R.anim.fade_in)
+                    .setPopExitAnim(R.anim.fade_out)
                     .build();
             Navigation.findNavController(view).navigate(R.id.quizFragment, null, navOptions);
         });
-
-
         return view;
     }
     @Override

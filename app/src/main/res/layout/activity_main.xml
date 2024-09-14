@@ -27,4 +27,15 @@
         app:navGraph="@navigation/nav_graph"
         app:defaultNavHost="true"/>
 
+    <Button
+        android:id="@+id/button_activity2"
+        android:text="@string/button_to_second_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
