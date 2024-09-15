@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cat_book_lottie"
-            android:layout_marginBottom="0dp"
+            android:layout_marginTop="50dp"
             app:lottie_loop="false"
             app:lottie_autoPlay="true"
             app:lottie_rawRes="@raw/cat_book_lottie"/>

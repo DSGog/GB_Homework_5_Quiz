@@ -16,11 +16,11 @@
         tools:ignore="MissingConstraints" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/test_lottie"
+        android:id="@+id/only_logo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:lottie_rawRes="@raw/test_lottie"
-        android:transitionName="heart_lottie_transition"
+        app:lottie_rawRes="@raw/only_logo"
+        android:transitionName="only_logo_transition"
         app:lottie_autoPlay="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,6 +33,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/progress_indicator"
         android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/test_lottie"/>
+        app:layout_constraintTop_toBottomOf="@id/only_logo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

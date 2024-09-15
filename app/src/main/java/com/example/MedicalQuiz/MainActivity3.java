@@ -25,7 +25,7 @@ public class MainActivity3 extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.expanded_image);
         imageView.setImageResource(R.drawable.welcome);
         imageView.setOnClickListener(v -> showCustomDialog());
-        LottieAnimationView animationView = findViewById(R.id.test_lottie);
+        LottieAnimationView animationView = findViewById(R.id.only_logo);
         LinearProgressIndicator progressIndicator = findViewById(R.id.progress_indicator);
 
         animationView.addAnimatorUpdateListener(animation -> {
