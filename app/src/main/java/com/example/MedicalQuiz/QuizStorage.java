@@ -1,33 +1,61 @@
 package com.example.MedicalQuiz;
 
-public class QuizStorage {
-    private static final String[] questions = {
-            "Самый большой орган в организме человека?",
-            "Чему равен дыхательный объём лёгких?",
-            "Эта часть мозга отвечает за то, чтобы предупреждать об опасности и заботиться о том, чтобы с вами ничего не случилось"
-    };
+import android.content.Context;
 
-    private static final String[][] answers = {
-            {"Лёгкие", "Мозг", "Кожа"},
-            {"500 мл", "1500мл", "3500мл"},
-            {"Кора мозга", "Амигдала", "Мозжечок"}
-    };
+public class QuizStorage {
+    public static String getQuestion(Context context, int index) {
+        switch (index) {
+            case 0:
+                return context.getString(R.string.question_1);
+            case 1:
+                return context.getString(R.string.question_2);
+            case 2:
+                return context.getString(R.string.question_3);
+            default:
+                throw new IllegalArgumentException("Invalid question index: " + index);
+        }
+    }
+
+    public static String[] getAnswers(Context context, int index) {
+        switch (index) {
+            case 0:
+                return new String[]{
+                        context.getString(R.string.answer_1_1),
+                        context.getString(R.string.answer_1_2),
+                        context.getString(R.string.answer_1_3)
+                };
+            case 1:
+                return new String[]{
+                        context.getString(R.string.answer_2_1),
+                        context.getString(R.string.answer_2_2),
+                        context.getString(R.string.answer_2_3)
+                };
+            case 2:
+                return new String[]{
+                        context.getString(R.string.answer_3_1),
+                        context.getString(R.string.answer_3_2),
+                        context.getString(R.string.answer_3_3)
+                };
+            default:
+                throw new IllegalArgumentException("Invalid question index: " + index);
+        }
+    }
 
     private static final int[] correctAnswers = {2, 0, 1};
 
-    public static String getQuestion(int index) {
-        if (index < 0 || index >= questions.length) {
-            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
-        }
-        return questions[index];
-    }
-
-    public static String[] getAnswers(int index) {
-        if (index < 0 || index >= answers.length) {
-            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
-        }
-        return answers[index];
-    }
+//    public static String getQuestion(int index) {
+//        if (index < 0 || index >= questions.length) {
+//            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
+//        }
+//        return questions[index];
+//    }
+//
+//    public static String[] getAnswers(int index) {
+//        if (index < 0 || index >= answers.length) {
+//            throw new ArrayIndexOutOfBoundsException("Invalid question index: " + index);
+//        }
+//        return answers[index];
+//    }
 
     public static int getCorrectAnswer(int index) {
         if (index < 0 || index >= correctAnswers.length) {
@@ -37,6 +65,6 @@ public class QuizStorage {
     }
 
     public static int getQuestionCount() {
-        return questions.length;
+        return correctAnswers.length;
     }
 }

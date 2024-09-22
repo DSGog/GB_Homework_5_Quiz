@@ -50,6 +50,14 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/ripple_effect"
             android:text="@string/start_button_text" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/language_button"
+            android:text="@string/birthday_date_pick_text" />
+
     </LinearLayout>
 
 </FrameLayout>

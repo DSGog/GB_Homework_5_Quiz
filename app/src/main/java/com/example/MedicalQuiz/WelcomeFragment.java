@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,12 @@ import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class WelcomeFragment extends Fragment {
 
@@ -25,6 +32,7 @@ public class WelcomeFragment extends Fragment {
         LottieAnimationView lottieAnimationView = view.findViewById(R.id.lottie_welcome_to_quiz);
         ProgressBar progressBar = view.findViewById(R.id.progress_indicator_welcome_to_quiz);
         Button startButton = view.findViewById(R.id.button_start);
+        Button languageButton = view.findViewById(R.id.language_button);
 
         ValueAnimator colorAnimator = ValueAnimator.ofArgb(Color.WHITE, Color.GREEN);
         colorAnimator.setDuration(1000);
@@ -40,7 +48,26 @@ public class WelcomeFragment extends Fragment {
         lottieAnimationView.setVisibility(View.GONE);
         progressBar.setVisibility(View.GONE);
 
+        languageButton.setOnClickListener(v -> {
+            MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                    .setTitleText("Выберите дату")
+                    .build();
+
+            datePicker.addOnPositiveButtonClickListener(selection -> {
+                long selectedTimeInMillis = selection;
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String formattedDate = sdf.format(new Date(selectedTimeInMillis));
+
+                Log.d("DATE_PICKER", "Selected time in millis: " + selectedTimeInMillis);
+                Log.d("DATE_PICKER", "Formatted date: " + formattedDate);
+                Snackbar.make(v, "Вы выбрали дату: " + formattedDate, Snackbar.LENGTH_LONG).show();
+            });
+
+            datePicker.show(getChildFragmentManager(), "DATE_PICKER");
+        });
+
         startButton.setOnClickListener(v -> {
+
             lottieAnimationView.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.VISIBLE);
             lottieAnimationView.playAnimation();

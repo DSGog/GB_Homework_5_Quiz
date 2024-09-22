@@ -28,6 +28,15 @@
         app:defaultNavHost="true"/>
 
     <Button
+        android:id="@+id/language_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_language"
+        app:layout_constraintTop_toBottomOf="@id/button_activity2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
         android:id="@+id/button_activity2"
         android:text="@string/button_to_second_activity"
         android:layout_width="wrap_content"

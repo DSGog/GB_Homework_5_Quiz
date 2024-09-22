@@ -1,19 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Medical Quiz</string>
-    <string name="welcome_message">Добро пожаловать в жизнь!</string>
-    <string name="start_button_text">Начать</string>
-    <string name="back_button_text">Назад</string>
-    <string name="submit_button_text">Отправить</string>
-    <string name="result_message">Ваш результат:</string>
-    <string name="restart_button_text">Начать заново</string>
-    <string name="question_text">Medical Quiz</string>
-    <string name="back_button">Назад</string>
-    <string name="send_button">Отправить</string>
-    <string name="false_answer">Неправильно!</string>
-    <string name="choose_answer">Выберите ответ</string>
-    <string name="correct_answers_count">"Правильных ответов: "</string>
-    <string name="correct_answer">Правильно!</string>
-    <string name="button_to_second_activity">Переход на тестовую страницу</string>
-    <string name="transition_text">Хочешь увеличить картинку? Кликни</string>
-    <string name="second_text_transition">Кликни на картинку</string>
+    <string name="welcome_message">Welcome to life!</string>
+    <string name="start_button_text">Start</string>
+    <string name="back_button_text">Back</string>
+    <string name="submit_button_text">Send</string>
+    <string name="result_message">Your result:</string>
+    <string name="restart_button_text">Start over</string>
+    <string name="back_button">Back</string>
+    <string name="send_button">Send</string>
+    <string name="false_answer">False!</string>
+    <string name="choose_answer">Choose an answer</string>
+    <string name="correct_answer">Correct</string>
+    <string name="button_to_second_activity">Access the examination page</string>
+    <string name="transition_text">Do you want to enlarge the picture? Click</string>
+    <string name="second_text_transition">Click on the picture</string>
+    <string name="question_1">The largest organ in the human body?</string>
+    <string name="question_2">What is the respiratory volume of the lungs?</string>
+    <string name="question_3">This part of the brain is responsible for warning of danger and making sure that nothing happens to you</string>
+    <string name="answer_1_1">Lungs</string>
+    <string name="answer_1_2">Brain</string>
+    <string name="answer_1_3">Skin</string>
+    <string name="answer_2_1">500 ml</string>
+    <string name="answer_2_2">1500 ml</string>
+    <string name="answer_2_3">3500 ml</string>
+    <string name="answer_3_1">The cerebral cortex</string>
+    <string name="answer_3_2">Amygdala</string>
+    <string name="answer_3_3">Cerebellum</string>
+    <string name="correct_answers_count_plurals_zero">There are no correct answers</string>
+    <string name="open_date_picker">Open date selection</string>
+    <string name="open_time_picker">Open the time selection</string>
+    <string name="picked_date">Selected date</string>
+    <string name="change_language">Change language</string>
+    <plurals name="correct_answers_count_plurals">
+        <item quantity="one">%d correct answer</item>
+        <item quantity="other">%d correct answers</item>
+    </plurals>
+    <string name="correct_answers_count">Correct answers count</string>
+    <string name="birthday_date_pick_text">Pick date of birth</string>
+    <string name="question_text">Question text</string>
+
 </resources>
+
+    <!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+<!--    <string name="app_name" translatable="false">Medical Quiz</string>-->
+<!--    <string name="welcome_message">Добро пожаловать в жизнь!</string>-->
+<!--    <string name="start_button_text">Начать</string>-->
+<!--    <string name="back_button_text">Назад</string>-->
+<!--    <string name="submit_button_text">Отправить</string>-->
+<!--    <string name="result_message">Ваш результат:</string>-->
+<!--    <string name="restart_button_text">Начать заново</string>-->
+<!--    <string name="question_text" translatable="false">Medical Quiz</string>-->
+<!--    <string name="back_button">Назад</string>-->
+<!--    <string name="send_button">Отправить</string>-->
+<!--    <string name="false_answer">Неправильно!</string>-->
+<!--    <string name="choose_answer">Выберите ответ</string>-->
+<!--    <string name="correct_answers_count">Количество правильных ответов</string>-->
+<!--    <string name="correct_answer">Правильно!</string>-->
+<!--    <string name="button_to_second_activity">Переход на тестовую страницу</string>-->
+<!--    <string name="transition_text">Хочешь увеличить картинку? Кликни</string>-->
+<!--    <string name="second_text_transition">Кликни на картинку</string>-->
+
+<!--    <string name="question_1">Самый большой орган в организме человека?</string>-->
+<!--    <string name="question_2">Чему равен дыхательный объём лёгких?</string>-->
+<!--    <string name="question_3">Эта часть мозга отвечает за то, чтобы предупреждать об опасности и заботиться о том, чтобы с вами ничего не случилось</string>-->
+
+<!--    <string name="answer_1_1">Лёгкие</string>-->
+<!--    <string name="answer_1_2">Мозг</string>-->
+<!--    <string name="answer_1_3">Кожа</string>-->
+
+<!--    <string name="answer_2_1">500 мл</string>-->
+<!--    <string name="answer_2_2">1500 мл</string>-->
+<!--    <string name="answer_2_3">3500 мл</string>-->
+
+<!--    <string name="answer_3_1">Кора мозга</string>-->
+<!--    <string name="answer_3_2">Амигдала</string>-->
+<!--    <string name="answer_3_3">Мозжечок</string>-->
+
+<!--&lt;!&ndash;    <string-array name="Gadget">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item>УЗИ</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item>Бронхоскоп</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item>Видеоларингоскоп</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </string-array>&ndash;&gt;-->
+
+<!--    <string name="correct_answers_count_plurals_zero">Нет правильных ответов</string>-->
+
+<!--    <plurals name="correct_answers_count_plurals">-->
+<!--        <item quantity="one">%d правильный ответ</item>-->
+<!--        <item quantity="few">%d правильных ответа</item>-->
+<!--        <item quantity="other">%d правильных ответов</item>-->
+<!--    </plurals>-->
+
+
+<!--    <string name="open_date_picker" tools:ignore="MissingTranslation">Открыть выбор даты</string>-->
+<!--    <string name="open_time_picker">Открыть выбор времени</string>-->
+<!--    <string name="picked_date">Выбранная дата</string>-->
+<!--    <string name="change_language">Выбор языка</string>-->
+<!--    <string name="birthday_date_pick_text">Введите дату рождения</string>-->
+
+<!--</resources>-->

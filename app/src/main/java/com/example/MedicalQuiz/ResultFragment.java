@@ -27,7 +27,14 @@ public class ResultFragment extends Fragment {
         Button restartButton = view.findViewById(R.id.button_restart);
 
         int score = getArguments().getInt("score", 0);
-        resultText.setText(getString(R.string.correct_answers_count) + score);
+        String correctAnswersText;
+
+        if (score == 0) {
+            correctAnswersText = getString(R.string.correct_answers_count_plurals_zero);
+        } else {
+            correctAnswersText = getResources().getQuantityString(R.plurals.correct_answers_count_plurals, score, score);
+        }
+        resultText.setText(correctAnswersText);
 
         AnimatorSet animatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(requireContext(), R.animator.fade_move);
         animatorSet.setTarget(resultText);

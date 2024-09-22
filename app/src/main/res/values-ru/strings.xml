@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Medical Quiz</string>
+    <string name="welcome_message">Добро пожаловать в жизнь!</string>
+    <string name="start_button_text">Начать</string>
+    <string name="back_button_text">Назад</string>
+    <string name="submit_button_text">Отправить</string>
+    <string name="result_message">Ваш результат:</string>
+    <string name="restart_button_text">Начать заново</string>
+    <string name="back_button">Назад</string>
+    <string name="send_button">Отправить</string>
+    <string name="false_answer">Неправильно!</string>
+    <string name="choose_answer">Выберите ответ</string>
+    <string name="correct_answers_count">Количество правильных ответов</string>
+    <string name="correct_answer">Правильно!</string>
+    <string name="button_to_second_activity">Переход на тестовую страницу</string>
+    <string name="transition_text">Хочешь увеличить картинку? Кликни</string>
+    <string name="second_text_transition">Кликни на картинку</string>
+
+    <string name="question_1">Самый большой орган в организме человека?</string>
+    <string name="question_2">Чему равен дыхательный объём лёгких?</string>
+    <string name="question_3">Эта часть мозга отвечает за то, чтобы предупреждать об опасности и заботиться о том, чтобы с вами ничего не случилось</string>
+
+    <string name="answer_1_1">Лёгкие</string>
+    <string name="answer_1_2">Мозг</string>
+    <string name="answer_1_3">Кожа</string>
+
+    <string name="answer_2_1">500 мл</string>
+    <string name="answer_2_2">1500 мл</string>
+    <string name="answer_2_3">3500 мл</string>
+
+    <string name="answer_3_1">Кора мозга</string>
+    <string name="answer_3_2">Амигдала</string>
+    <string name="answer_3_3">Мозжечок</string>
+
+    <!--    <string-array name="Gadget">-->
+    <!--        <item>УЗИ</item>-->
+    <!--        <item>Бронхоскоп</item>-->
+    <!--        <item>Видеоларингоскоп</item>-->
+    <!--    </string-array>-->
+
+    <string name="correct_answers_count_plurals_zero">Нет правильных ответов</string>
+
+    <string name="open_date_picker" tools:ignore="MissingTranslation">Открыть выбор даты</string>
+    <string name="open_time_picker">Открыть выбор времени</string>
+    <string name="picked_date">Выбранная дата</string>
+    <string name="change_language">Выбор языка</string>
+
+    <plurals name="correct_answers_count_plurals" tools:ignore="MissingQuantity">
+        <item quantity="one">%d правильный ответ</item>
+        <item quantity="other">%d правильных ответа</item>
+    </plurals>
+    <string name="birthday_date_pick_text">Введите дату рождения</string>
+    <string name="question_text">Текст вопроса</string>
+
+</resources>

@@ -32,13 +32,7 @@ public class QuizFragment extends Fragment {
 
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
 
-        if (currentQuestionIndex >= QuizStorage.getQuestionCount()) {
-            Bundle bundle = new Bundle();
-            bundle.putInt("score", score);
-            navController.navigate(R.id.action_quizFragment_to_resultFragment, bundle);
-        } else {
-            updateQuestion(questionText, answersGroup);
-        }
+        updateQuestion(questionText, answersGroup);
 
         backButton.setOnClickListener(v -> navController.navigate(R.id.welcomeFragment));
 
@@ -57,6 +51,7 @@ public class QuizFragment extends Fragment {
             } else {
                 Toast.makeText(getContext(), R.string.false_answer, Toast.LENGTH_SHORT).show();
             }
+
             currentQuestionIndex++;
 
             if (currentQuestionIndex < QuizStorage.getQuestionCount()) {
@@ -72,27 +67,26 @@ public class QuizFragment extends Fragment {
     }
 
     private void updateQuestion(TextView questionText, RadioGroup answersGroup) {
-        if (currentQuestionIndex < QuizStorage.getQuestionCount()) {
-            Animation fadeIn = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in);
-            questionText.setText(QuizStorage.getQuestion(currentQuestionIndex));
-            questionText.startAnimation(fadeIn);
-
-            answersGroup.clearCheck();
-            answersGroup.removeAllViews();
-
-            String[] answers = QuizStorage.getAnswers(currentQuestionIndex);
-            if (answers != null) {
-                for (String answer : answers) {
-                    RadioButton radioButton = new RadioButton(requireContext());
-                    radioButton.setText(answer);
-                    answersGroup.addView(radioButton);
-                    radioButton.startAnimation(fadeIn);
-                }
-            }
-        } else {
+        if (currentQuestionIndex >= QuizStorage.getQuestionCount()) {
             Bundle bundle = new Bundle();
             bundle.putInt("score", score);
             Navigation.findNavController(requireView()).navigate(R.id.action_quizFragment_to_resultFragment, bundle);
+            return;
+        }
+
+        Animation fadeIn = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in);
+        questionText.setText(QuizStorage.getQuestion(requireContext(), currentQuestionIndex));
+        questionText.startAnimation(fadeIn);
+
+        answersGroup.clearCheck();
+        answersGroup.removeAllViews();
+
+        String[] answers = QuizStorage.getAnswers(requireContext(), currentQuestionIndex);
+        for (String answer : answers) {
+            RadioButton radioButton = new RadioButton(requireContext());
+            radioButton.setText(answer);
+            answersGroup.addView(radioButton);
+            radioButton.startAnimation(fadeIn);
         }
     }
 }

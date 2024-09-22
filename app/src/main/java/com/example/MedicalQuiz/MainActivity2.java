@@ -1,24 +1,15 @@
 package com.example.MedicalQuiz;
 
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
-import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.LinearGradient;
+import android.hardware.biometrics.BiometricManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.CycleInterpolator;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -86,7 +77,23 @@ public class MainActivity2 extends AppCompatActivity {
         GradientTextView secondTextTransition = findViewById(R.id.second_text_transition);
         transitionText.setOnClickListener(v -> {
             secondTextTransition.setVisibility(View.VISIBLE);
+//            ValueAnimator colorAnimatorText = ValueAnimator.ofArgb(Color.BLUE, Color.RED, Color.GREEN);
+//            colorAnimatorText.setDuration(1000);
+//            colorAnimatorText.setRepeatCount(ValueAnimator.INFINITE);
+//            colorAnimatorText.setRepeatMode(ValueAnimator.REVERSE);
+//            colorAnimatorText.addUpdateListener(anim -> {
+//                int color = (int) anim.getAnimatedValue();
+//                secondTextTransition.setTextColor(color);
+//            });
+//            colorAnimatorText.start();
         });
+
+//        String[] gadgets = getResources().getStringArray(R.array.Gadget);
+//        for (String gadget : gadgets) {
+//            if (gadget.startsWith("Б")) {
+//                System.out.println("gadget");
+//            }
+//        }
 
         ImageView imageWelcome = findViewById(R.id.image_welcome);
         imageWelcome.setOnClickListener(v -> {

@@ -1,7 +1,9 @@
 package com.example.MedicalQuiz;
 
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,6 +16,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.MedicalQuiz.databinding.ActivityMainBinding;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -24,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.languageButton.setOnClickListener(v -> {
+            ShowLanguageDialog();
+        });
 
         binding.buttonActivity2.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity2.class);
@@ -40,8 +47,10 @@ public class MainActivity extends AppCompatActivity {
             navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
                 if (destination.getId() == R.id.quizFragment || destination.getId() == R.id.resultFragment) {
                     binding.buttonActivity2.setVisibility(View.GONE);
+                    binding.languageButton.setVisibility(View.GONE);
                 } else {
                     binding.buttonActivity2.setVisibility(View.VISIBLE);
+                    binding.languageButton.setVisibility(View.VISIBLE);
                 }
             });
         }
@@ -51,5 +60,31 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return WindowInsetsCompat.CONSUMED;
         });
+    }
+
+    private void ShowLanguageDialog() {
+        String[] languages = {"English", "Русский"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose Language")
+                .setItems(languages, (dialog, which) -> {
+                    if (which == 0) {
+                        setLocale("en");
+                    } else if (which == 1) {
+                        setLocale("ru");
+                    }
+                });
+        builder.show();
+    }
+
+    private void setLocale(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+
+        Intent refresh = new Intent(this, MainActivity.class);
+        startActivity(refresh);
+        finish();
     }
 }
